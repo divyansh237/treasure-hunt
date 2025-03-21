@@ -16,6 +16,7 @@ function toggleMusic() {
     let audio = document.getElementById("bg-music");
 
     if (audio.paused) {
+        audio.volume = 0.5;
         audio.play().then(() => {
             document.getElementById("music-toggle").innerText = "🔇 Pause Music";
         }).catch(error => console.log("Autoplay Blocked: ", error));
