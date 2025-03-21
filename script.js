@@ -25,10 +25,6 @@ function toggleMusic() {
     }
 }
 
-function playMusic() {
-    let audio = document.getElementById("bg-music");
-    audio.play().catch(error => console.log("Autoplay Blocked: ", error));
-}
 
 function showHint() {
     if (hintCount > 0) {
