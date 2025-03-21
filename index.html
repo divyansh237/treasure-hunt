@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Hunt Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="audio/background-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="correct-sound">
+        <source src="audio/correct.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="wrong-sound">
+        <source src="audio/wrong.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="hint-sound">
+        <source src="audio/hint.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="game-container">
+        <h1 class="fade-in">🌟 Treasure Hunt 🌟</h1>
+        <button id="music-toggle" onclick="toggleMusic()">🔊 Play Music</button>
+        <p id="story">Welcome to the treasure hunt! Solve the puzzles to find the hidden treasure.</p>
+        <p id="question" class="fade-in">Loading...</p>
+        <input type="text" id="answer" placeholder="Your Answer">
+        <button onclick="checkAnswer()">Submit</button>
+        <button id="hint-btn" onclick="showHint()">💡 Show Hint (5 Left)</button>
+        <p id="result"></p>
+        <p id="location"></p>
+        <p id="clue" class="hint-box"></p>
+
+        <div class="map-container">
+            <div id="map">
+                <div class="location-marker" id="marker1">📍</div>
+                <div class="location-marker" id="marker2">📍</div>
+                <div class="location-marker" id="marker3">📍</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
