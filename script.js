@@ -13,12 +13,14 @@ const puzzles = [
 ];
 
 function toggleMusic() {
-    if (bgMusic.paused) {
-        bgMusic.play();
-        document.getElementById("music-toggle").textContent = "🔇 Stop Music";
+    let audio = document.getElementById("bg-music");
+
+    if (audio.paused) {
+        audio.play().catch(error => console.log("Autoplay Blocked: ", error));
+        document.getElementById("music-toggle").innerText = "🔇 Pause Music";
     } else {
-        bgMusic.paused();
-        document.getElementById("music-toggle").textContent = "🔊 Play Music";
+        audio.pause();
+        document.getElementById("music-toggle").innerText = "🔊 Play Music";
     }
 }
 
