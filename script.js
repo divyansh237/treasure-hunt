@@ -16,8 +16,9 @@ function toggleMusic() {
     let audio = document.getElementById("bg-music");
 
     if (audio.paused) {
-        audio.play().catch(error => console.log("Autoplay Blocked: ", error));
-        document.getElementById("music-toggle").innerText = "🔇 Pause Music";
+        audio.play().then(() => {
+            document.getElementById("music-toggle").innerText = "🔇 Pause Music";
+        }).catch(error => console.log("Autoplay Blocked: ", error));
     } else {
         audio.pause();
         document.getElementById("music-toggle").innerText = "🔊 Play Music";
